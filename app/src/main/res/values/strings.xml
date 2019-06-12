@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Immoblier</string>
+    <string name="type">Type :</string>
+    <string name="date">Date d\'ajout :</string>
+    <string name="detail">Détail</string>
+    <string name="available">Disponible</string>
 </resources>

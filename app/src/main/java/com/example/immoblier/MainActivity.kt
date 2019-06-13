@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         val secondHomePictures = ArrayList<Int>()
         val thirdHomePictures = ArrayList<Int>()
 
-        firstHomePictures.add(R.drawable.images)
+        firstHomePictures.add(R.drawable.picture3)
         secondHomePictures.add(R.drawable.picture3)
         thirdHomePictures.add(R.drawable.picture2)
 

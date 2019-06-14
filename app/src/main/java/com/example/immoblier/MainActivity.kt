@@ -1,19 +1,21 @@
 package com.example.immoblier
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
+val announcements = ArrayList<Announcement>()
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val announcements = ArrayList<Announcement>()
 
 
         val firstHomePictures = ArrayList<Int>()
@@ -24,6 +26,11 @@ class MainActivity : AppCompatActivity() {
         secondHomePictures.add(R.drawable.picture3)
         thirdHomePictures.add(R.drawable.picture2)
 
+
+        fab.setOnClickListener { view ->
+            val intent = Intent(this, newAnnounce::class.java)
+            startActivity(intent)
+        }
 
         announcements.add(Announcement(
             "Alger",

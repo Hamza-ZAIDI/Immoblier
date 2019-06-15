@@ -1,5 +1,6 @@
 package com.example.immoblier
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -7,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import java.text.DecimalFormat
 import java.text.SimpleDateFormat
 
 class HomeRecyclerViewAdapter(data : ArrayList<Announcement>,internal var context : Context) : RecyclerView.Adapter<HomeRecyclerViewAdapter.ViewHolder>() {
@@ -21,6 +23,7 @@ class HomeRecyclerViewAdapter(data : ArrayList<Announcement>,internal var contex
         return data.size
     }
 
+    @SuppressLint("SimpleDateFormat")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
 
@@ -32,10 +35,13 @@ class HomeRecyclerViewAdapter(data : ArrayList<Announcement>,internal var contex
         holder.nbGarages.text = data[position].nbGarages.toString()
         holder.type.text = data[position].type
 
-        val simpleDateFormat = SimpleDateFormat("dd-m-yyyy")
+        val simpleDateFormat = SimpleDateFormat("dd-MM-yyyy")
 
         holder.date.text = simpleDateFormat.format(data[position].date)
-        holder.price.text = data[position].price.toString()
+        val decimalFormat = DecimalFormat()
+        decimalFormat.applyPattern("###.## DA")
+
+        holder.price.text = decimalFormat.format(data[position].price)
         holder.housePicture.setImageResource(data[position].pictures[0])
     }
 

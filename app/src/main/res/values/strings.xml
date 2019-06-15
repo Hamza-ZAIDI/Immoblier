@@ -4,4 +4,17 @@
     <string name="date">Date d\'ajout :</string>
     <string name="detail">Détail</string>
     <string name="available">Disponible</string>
+
+    <string name="sort">Trier</string>
+    <string name="home_view_title">Annonces</string>
+    <string name="cancel">Annuler</string>
+    <string name="sort_btn_txt">Trier</string>
+
+
+    <string name="sort_by_wilaya_txt">Wilaya</string>
+    <string name="sort_by_price_txt">Prix</string>
+    <string name="sort_are_txt">Surface</string>
+    <string name="sort_by_type_txt">Type</string>
+    <string name="sort_by_bedrooms_txt">Nombre de chambres</string>
+    <string name="dscCheckBoxText">Decendant</string>
 </resources>

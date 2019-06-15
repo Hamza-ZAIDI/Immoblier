@@ -2,6 +2,7 @@ package com.example.immoblier
 
 import android.content.Intent
 import android.os.Bundle
+import android.provider.MediaStore
 import android.support.v7.app.AppCompatActivity
 import android.text.TextUtils
 import android.widget.*
@@ -11,8 +12,19 @@ import java.util.concurrent.TimeUnit
 class newAnnounce : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.newannounce)
+
+        val thirdHomePictures = ArrayList<Int>()
+        thirdHomePictures.add(R.drawable.picture2)
+
+        val upload = findViewById<Button>(R.id.upload)
+        upload.setOnClickListener {
+            val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+            startActivityForResult(gallery, 1)
+        }
+
 
 
         val submit = findViewById<Button>(R.id.submit)
@@ -27,49 +39,50 @@ class newAnnounce : AppCompatActivity() {
             val nbBedRooms = findViewById<EditText>(R.id.nbBedRooms).text.toString()
             val area = findViewById<EditText>(R.id.area).text.toString()
             val price = findViewById<EditText>(R.id.price).text.toString()
-            val type = findViewById<RadioButton>(findViewById<RadioGroup>(R.id.type).checkedRadioButtonId).text.toString()
+            val type =
+                findViewById<RadioButton>(findViewById<RadioGroup>(R.id.type).checkedRadioButtonId).text.toString()
 
-            val thirdHomePictures = ArrayList<Int>()
-            thirdHomePictures.add(R.drawable.picture2)
+            if (!TextUtils.isEmpty(wilaya)
+                && !TextUtils.isEmpty(adrs)
+                && !TextUtils.isEmpty(desc)
+                && !TextUtils.isEmpty(nbBedRooms)
+                && !TextUtils.isEmpty(area)
+                && !TextUtils.isEmpty(name)
+                && !TextUtils.isEmpty(phone)
+                && !TextUtils.isEmpty(email)
+            ) {
 
-             if (!TextUtils.isEmpty(wilaya)
-                 &&  !TextUtils.isEmpty(adrs)
-                 &&  !TextUtils.isEmpty(desc)
-                 &&  !TextUtils.isEmpty(nbBedRooms)
-                 &&  !TextUtils.isEmpty(area)
-                 &&  !TextUtils.isEmpty(name)
-                 &&  !TextUtils.isEmpty(phone)
-                 &&  !TextUtils.isEmpty(email)  ) {
+                announcements.add(
+                    Announcement(
+                        wilaya,
+                        adrs,
+                        desc,
+                        type,
+                        nbBedRooms.toInt(),
+                        3,
+                        1,
+                        1,
+                        0,
+                        1,
+                        area.toFloat(),
+                        thirdHomePictures,
+                        Agent(name, email, phone.toInt()),
+                        price.toFloat(),
+                        Date()
+                    )
+                )
 
-                 announcements.add(
-                     Announcement(
-                         wilaya,
-                         adrs,
-                         desc,
-                         type,
-                         nbBedRooms.toInt(),
-                         3,
-                         1,
-                         1,
-                         0,
-                         1,
-                         area.toFloat(),
-                         thirdHomePictures,
-                         Agent(name, email, phone.toInt()),
-                         price.toFloat(),
-                         Date()
-                     )
-                 )
-
-                 Toast.makeText(this, "Announce ajouter !", Toast.LENGTH_SHORT).show()
-                 TimeUnit.SECONDS.sleep(1L)
-                 val intent = Intent(this, MainActivity::class.java)
-                 startActivity(intent)
+                Toast.makeText(this, "Announce ajouter !", Toast.LENGTH_SHORT).show()
+                TimeUnit.SECONDS.sleep(1L)
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
 
             }
 
-
-
         }
+    }
+
+    override fun onActivityResult(requestCode:Int, resultCode:Int, data:Intent?){
+        val image = data!!.data
     }
 }

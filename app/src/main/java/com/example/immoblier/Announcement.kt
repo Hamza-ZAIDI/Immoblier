@@ -14,7 +14,7 @@ class Announcement(var wilaya : String,
                    var nbKitchens : Int,
                    var nbGardens : Int,
                    var area : Float,
-                   var pictures : ArrayList<Int>,
+                   var pictures : ArrayList<String>,
                    var agent : Agent,
                    var price : Float,
                    var date: Date

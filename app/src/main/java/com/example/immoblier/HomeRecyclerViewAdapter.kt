@@ -3,6 +3,7 @@ package com.example.immoblier
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -43,7 +44,12 @@ class HomeRecyclerViewAdapter(data : ArrayList<Announcement>,internal var contex
         decimalFormat.applyPattern("###.## DA")
 
         holder.price.text = decimalFormat.format(data[position].price)
-        holder.housePicture.setImageResource(data[position].pictures[0])
+
+        if(data[position].pictures.size == 0){
+            holder.housePicture.setImageResource(R.drawable.picture2)
+        } else {
+            holder.housePicture.setImageURI(Uri.parse(data[position].pictures.get(0)))
+        }
 
         holder.detail.setOnClickListener{
 

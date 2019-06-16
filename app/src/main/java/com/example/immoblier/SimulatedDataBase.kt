@@ -34,7 +34,7 @@ object SimulatedDataBase {
             75f,
                 firstHomePictures,
                 agents[0],
-                15000000f,
+                15200000f,
                 Date()
             )
         )
@@ -53,7 +53,7 @@ object SimulatedDataBase {
                 75f,
                 firstHomePictures,
                 agents[0],
-                15000000f,
+                10000000f,
                 Date()
             )
         )
@@ -72,23 +72,36 @@ object SimulatedDataBase {
                 75f,
                 firstHomePictures,
                 agents[0],
-                15000000f,
+                18000000f,
                 Date()
             )
         )
     }
 
 
-    fun sortByWilaya(){
-        announcements.sortBy { it.wilaya }
+    fun sortByWilaya(decs : Boolean){
+        if (decs) announcements.sortByDescending {it.wilaya  }
+        else announcements.sortBy { it.wilaya }
     }
 
-    fun sortByPrice(){
-
+    fun sortByPrice(decs : Boolean){
+        if (decs) announcements.sortByDescending {it.price  }
+        else announcements.sortBy { it.price }
     }
 
-    fun sortByArea(){
+    fun sortByArea(decs : Boolean){
+        if (decs) announcements.sortByDescending {it.area  }
+        else announcements.sortBy { it.area }
+    }
 
+    fun sortByType(decs : Boolean){
+        if (decs) announcements.sortByDescending {it.type  }
+        else announcements.sortBy { it.type }
+    }
+
+    fun sortByBedrooms(decs : Boolean){
+        if (decs) announcements.sortByDescending {it.nbBedRooms  }
+        else announcements.sortBy { it.nbBedRooms }
     }
 
 

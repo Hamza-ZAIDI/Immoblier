@@ -1,6 +1,7 @@
 package com.example.immoblier
 
 import android.annotation.SuppressLint
+import android.location.Criteria
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
@@ -64,7 +65,15 @@ class MainActivity : AppCompatActivity(), SortDialog.SortDialogListener {
 
     }
 
-    override fun sortAnnouncements() {
+    override fun sortAnnouncements(criteria: Int, desc : Boolean) {
+
+        when(criteria){
+            0 -> SimulatedDataBase.sortByWilaya(desc)
+            1 -> SimulatedDataBase.sortByPrice(desc)
+            2-> SimulatedDataBase.sortByType(desc)
+            3-> SimulatedDataBase.sortByBedrooms(desc)
+        }
+
         adapter = HomeRecyclerViewAdapter(SimulatedDataBase.announcements, applicationContext)
         announcementRecycler.adapter = adapter
     }

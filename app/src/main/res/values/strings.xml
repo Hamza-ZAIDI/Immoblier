@@ -33,6 +33,10 @@
     <string name="pool">Picines :</string>
     <string name="agent_info_btn_txt">Information de l\'annonceur</string>
     <string name="tv_detail_txt">Afficher les détails</string>
+    <string name="full_name">Nom</string>
+    <string name="email">Email :</string>
+    <string name="phone_number">Numero de telephone</string>
+    <string name="ok">OK</string>
 
     <string-array name="types">
         <item>Villa</item>

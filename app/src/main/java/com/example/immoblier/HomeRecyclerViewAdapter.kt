@@ -56,7 +56,8 @@ class HomeRecyclerViewAdapter(data : ArrayList<Announcement>,internal var contex
             intent.putExtra("type",data[position].type)
             intent.putExtra("area",data[position].area)
             intent.putExtra("price", data[position].price)
-            intent.putExtra("date", data[position].date)
+            val simpleDateFormat = SimpleDateFormat("dd-MM-yyyy")
+            intent.putExtra("date", simpleDateFormat.format(data[position].date))
             intent.putExtra("description", data[position].description)
             intent.putExtra("agentName", data[position].agent.fullName)
             intent.putExtra("agentEmail", data[position].agent.email)
@@ -65,6 +66,9 @@ class HomeRecyclerViewAdapter(data : ArrayList<Announcement>,internal var contex
             intent.putExtra("pools", data[position].nbPools)
             intent.putExtra("gardens", data[position].nbGardens)
             intent.putExtra("pictures", data[position].pictures)
+
+
+            context.startActivity(intent)
 
         }
     }
@@ -91,13 +95,13 @@ class HomeRecyclerViewAdapter(data : ArrayList<Announcement>,internal var contex
 
         init {
             housePicture = itemView.findViewById(R.id.iv_house_picture)
-            wilaya = itemView.findViewById(R.id.tvWilaya)
-            address = itemView.findViewById(R.id.tvAdress)
-            nbBedRooms = itemView.findViewById(R.id.tvBedRooms)
-            nbBathRooms = itemView.findViewById(R.id.tvBathroomNumber)
-            nbGarages = itemView.findViewById(R.id.tvGarageNumber)
+            wilaya = itemView.findViewById(R.id.tv_detail_wilaya)
+            address = itemView.findViewById(R.id.tv_detail_address)
+            nbBedRooms = itemView.findViewById(R.id.tv_detail_bedrooms)
+            nbBathRooms = itemView.findViewById(R.id.tv_detail_bathrooms)
+            nbGarages = itemView.findViewById(R.id.tv_detail_garages)
             type = itemView.findViewById(R.id.tvType)
-            date = itemView.findViewById(R.id.tvDate)
+            date = itemView.findViewById(R.id.tv_detail_date)
             price = itemView.findViewById(R.id.tv_house_price)
             detail = itemView.findViewById(R.id.tv_detail)
         }

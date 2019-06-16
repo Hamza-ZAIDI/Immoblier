@@ -17,4 +17,9 @@
     <string name="sort_by_type_txt">Type</string>
     <string name="sort_by_bedrooms_txt">Nombre de chambres</string>
     <string name="dscCheckBoxText">Decendant</string>
+    <string name="et_wilaya_dlg_txt">Alger</string>
+    <string name="max_price">Prix maximum</string>
+    <string name="min_area_txt">Surface minimal</string>
+    <string name="min_garages_txt">Nombre minimum de garages</string>
+    <string name="filter_btn_txt">Filtrer</string>
 </resources>

@@ -14,7 +14,8 @@ import android.view.MenuItem
 
 import java.util.*
 
-class MainActivity : AppCompatActivity(), SortDialog.SortDialogListener {
+class MainActivity : AppCompatActivity(), SortDialog.SortDialogListener, FilterDialog.FilterDialogListener {
+
 
     private lateinit var toolbar: Toolbar
     private lateinit var announcementRecycler : RecyclerView
@@ -52,9 +53,9 @@ class MainActivity : AppCompatActivity(), SortDialog.SortDialogListener {
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
 
         when (item?.itemId){
-            R.id.sort_ic -> {
-                openSortDialog()
-            }
+            R.id.sort_ic -> {openSortDialog()}
+
+            R.id.filter_ic -> {openFilterDialog()}
         }
         return super.onOptionsItemSelected(item)
     }
@@ -62,6 +63,12 @@ class MainActivity : AppCompatActivity(), SortDialog.SortDialogListener {
     private fun openSortDialog(){
         val dialog = SortDialog()
         dialog.show(supportFragmentManager, "Sort Dialog")
+
+    }
+
+    private fun openFilterDialog(){
+        val dialog = FilterDialog()
+        dialog.show(supportFragmentManager, "Filter Dialog")
 
     }
 
@@ -76,5 +83,9 @@ class MainActivity : AppCompatActivity(), SortDialog.SortDialogListener {
 
         adapter = HomeRecyclerViewAdapter(SimulatedDataBase.announcements, applicationContext)
         announcementRecycler.adapter = adapter
+    }
+
+    override fun filterAnnouncements() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }

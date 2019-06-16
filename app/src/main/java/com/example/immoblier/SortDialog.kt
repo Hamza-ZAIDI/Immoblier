@@ -5,7 +5,6 @@ import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
 import android.support.v7.app.AppCompatDialogFragment
-import android.util.Log
 import android.view.View
 import android.widget.*
 
@@ -24,7 +23,7 @@ class SortDialog : AppCompatDialogFragment() {
 
         cancelBtn = view?.findViewById(R.id.cancel_sort_btn)!!
         cancelBtn.setOnClickListener(View.OnClickListener {
-            dialog.hide()
+            this.dismiss()
         })
 
         sortBtn = view?.findViewById(R.id.sort_btn)

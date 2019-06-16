@@ -11,18 +11,28 @@
     <string name="sort_btn_txt">Trier</string>
 
 
-    <string name="sort_by_wilaya_txt">Wilaya</string>
-    <string name="sort_by_price_txt">Prix</string>
-    <string name="sort_are_txt">Surface</string>
-    <string name="sort_by_type_txt">Type</string>
-    <string name="sort_by_bedrooms_txt">Nombre de chambres</string>
+    <string name="sort_by_wilaya_txt">Wilaya : </string>
+    <string name="sort_by_price_txt">Prix : </string>
+    <string name="sort_are_txt">Surface :  </string>
+    <string name="sort_by_type_txt">Type : </string>
+    <string name="sort_by_bedrooms_txt">Nombre de chambres : </string>
     <string name="dscCheckBoxText">Decendant</string>
     <string name="et_wilaya_dlg_txt">Alger</string>
-    <string name="max_price">Prix maximum</string>
-    <string name="min_area_txt">Surface minimal</string>
-    <string name="min_garages_txt">Nombre minimum de garages</string>
+    <string name="max_price">Prix maximum : </string>
+    <string name="min_area_txt">Surface minimal : </string>
+    <string name="min_garages_txt">Nombre minimum de garages : </string>
     <string name="filter_btn_txt">Filtrer</string>
     <string name="refresh">Actualiser la liste</string>
+    <string name="description_txt">Description : </string>
+    <string name="area">Surface</string>
+    <string name="bedrooms">Chambres :</string>
+    <string name="kitchen">Cuisine :</string>
+    <string name="bathroom">Salles de bain :</string>
+    <string name="garage">Garages :</string>
+    <string name="garden">Jardins :</string>
+    <string name="pool">Picines :</string>
+    <string name="agent_info_btn_txt">Information de l\'annonceur</string>
+    <string name="tv_detail_txt">Afficher les détails</string>
 
     <string-array name="types">
         <item>Villa</item>

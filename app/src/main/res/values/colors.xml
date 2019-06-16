@@ -5,7 +5,7 @@
     <color name="colorAccent">#D81B60</color>
     <color name="priceTextColor">#F43636</color>
     <color name="availabulityColor">#4CAF50</color>
-    <color name="textColorPrimary">#000</color>
+    <color name="textColorPrimary">#000000</color>
     <color name="textColorSecondary">#4D000000</color>
     <color name="priceBackGroundColor">#CDF3EDED</color>
     <color name="actionBarTextColor">#FFF</color>

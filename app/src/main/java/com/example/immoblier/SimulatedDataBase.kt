@@ -40,6 +40,64 @@ object SimulatedDataBase {
         )
 
         announcements.add(
+            Announcement("Alger",
+                "Bouchaoui 2 181, Cheraga Alger",
+                "Villa R+2 a Bouchaoui",
+                "Villa",
+                7,
+                3,
+                2,
+                0,
+                3,
+                1,
+                75f,
+                firstHomePictures,
+                agents[0],
+                15300000f,
+                Date()
+            )
+        )
+
+        announcements.add(
+            Announcement("Alger",
+                "Bouchaoui 2 181, Cheraga Alger",
+                "Villa R+2 a Bouchaoui",
+                "Villa",
+                7,
+                3,
+                2,
+                0,
+                3,
+                1,
+                75f,
+                firstHomePictures,
+                agents[0],
+                17300000f,
+                Date()
+            )
+        )
+
+        announcements.add(
+            Announcement("Alger",
+                "Bouchaoui 2 181, Cheraga Alger",
+                "Villa R+2 a Bouchaoui",
+                "Villa",
+                7,
+                3,
+                2,
+                0,
+                3,
+                1,
+                75f,
+                firstHomePictures,
+                agents[0],
+                14300000f,
+                Date()
+            )
+        )
+
+
+        announcements.add(
             Announcement("Blger",
                 "Bouchaoui 2 181, Cheraga Alger",
                 "Villa R+2 a Bouchaoui",
@@ -76,32 +134,6 @@ object SimulatedDataBase {
                 Date()
             )
         )
-    }
-
-
-    fun sortByWilaya(decs : Boolean){
-        if (decs) announcements.sortByDescending {it.wilaya  }
-        else announcements.sortBy { it.wilaya }
-    }
-
-    fun sortByPrice(decs : Boolean){
-        if (decs) announcements.sortByDescending {it.price  }
-        else announcements.sortBy { it.price }
-    }
-
-    fun sortByArea(decs : Boolean){
-        if (decs) announcements.sortByDescending {it.area  }
-        else announcements.sortBy { it.area }
-    }
-
-    fun sortByType(decs : Boolean){
-        if (decs) announcements.sortByDescending {it.type  }
-        else announcements.sortBy { it.type }
-    }
-
-    fun sortByBedrooms(decs : Boolean){
-        if (decs) announcements.sortByDescending {it.nbBedRooms  }
-        else announcements.sortBy { it.nbBedRooms }
     }
 
 

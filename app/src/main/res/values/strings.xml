@@ -22,4 +22,11 @@
     <string name="min_area_txt">Surface minimal</string>
     <string name="min_garages_txt">Nombre minimum de garages</string>
     <string name="filter_btn_txt">Filtrer</string>
+    <string name="refresh">Actualiser la liste</string>
+
+    <string-array name="types">
+        <item>Villa</item>
+        <item>Appartement</item>
+        <item>Lot de terrain</item>
+    </string-array>
 </resources>

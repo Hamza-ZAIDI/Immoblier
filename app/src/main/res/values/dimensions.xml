@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="cardPadding">10dp</dimen>
+    <dimen name="availabilityIconWidth">30dp</dimen>
+    <dimen name="availabilityIconHeight">30dp</dimen>
+    <dimen name="availabilityNumberWidth">35dp</dimen>
+    <dimen name="wilayaTextSize">18sp</dimen>
+    <dimen name="cardMargin">8dp</dimen>
+</resources>

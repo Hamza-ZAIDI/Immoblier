@@ -1,6 +1,7 @@
 package com.example.immoblier
 
 import android.content.Intent
+import android.net.Uri
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
@@ -18,13 +19,12 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        val firstHomePictures = ArrayList<Int>()
-        val secondHomePictures = ArrayList<Int>()
-        val thirdHomePictures = ArrayList<Int>()
+        val firstHomePictures = ArrayList<String>()
+        val secondHomePictures = ArrayList<String>()
+        val thirdHomePictures = ArrayList<String>()
 
-        firstHomePictures.add(R.drawable.picture3)
-        secondHomePictures.add(R.drawable.picture3)
-        thirdHomePictures.add(R.drawable.picture2)
+
+
 
 
         fab.setOnClickListener { view ->

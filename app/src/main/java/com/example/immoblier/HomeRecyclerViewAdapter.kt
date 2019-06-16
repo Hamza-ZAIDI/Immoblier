@@ -1,6 +1,7 @@
 package com.example.immoblier
 
 import android.content.Context
+import android.net.Uri
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -36,7 +37,13 @@ class HomeRecyclerViewAdapter(data : ArrayList<Announcement>,internal var contex
 
         holder.date.text = simpleDateFormat.format(data[position].date)
         holder.price.text = data[position].price.toString()
-        holder.housePicture.setImageResource(data[position].pictures[0])
+        //holder.housePicture.setImageResource(data[position].pictures[0])
+        if(data[position].pictures.size == 0){
+            holder.housePicture.setImageResource(R.drawable.picture2)
+        } else {
+            holder.housePicture.setImageURI(Uri.parse(data[position].pictures.get(0)))
+        }
+
     }
 
 

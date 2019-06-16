@@ -1,5 +1,6 @@
 package com.example.immoblier
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.provider.MediaStore
@@ -11,13 +12,13 @@ import java.util.concurrent.TimeUnit
 
 class newAnnounce : AppCompatActivity() {
 
+    val images = ArrayList<String>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.newannounce)
 
-        val thirdHomePictures = ArrayList<Int>()
-        thirdHomePictures.add(R.drawable.picture2)
 
         val upload = findViewById<Button>(R.id.upload)
         upload.setOnClickListener {
@@ -65,7 +66,7 @@ class newAnnounce : AppCompatActivity() {
                         0,
                         1,
                         area.toFloat(),
-                        thirdHomePictures,
+                        images,
                         Agent(name, email, phone.toInt()),
                         price.toFloat(),
                         Date()
@@ -83,6 +84,16 @@ class newAnnounce : AppCompatActivity() {
     }
 
     override fun onActivityResult(requestCode:Int, resultCode:Int, data:Intent?){
-        val image = data!!.data
+        if ((requestCode == 1) && (resultCode == Activity.RESULT_OK)) {
+            if (data!!.data != null) {
+                images.add(data.data!!.toString())
+            } else if (data.clipData != null) {
+                val clipArray = data.clipData
+                for (i in 0 until clipArray!!.itemCount) {
+                    images.add(clipArray.getItemAt(i).uri.toString())
+                }
+            }
+        }
+
     }
 }

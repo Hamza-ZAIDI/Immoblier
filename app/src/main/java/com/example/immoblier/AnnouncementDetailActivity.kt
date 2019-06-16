@@ -1,10 +1,15 @@
 package com.example.immoblier
 
 import android.content.Context
+import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
+import com.synnapps.carouselview.CarouselView
+import com.synnapps.carouselview.ImageListener
+import kotlinx.android.synthetic.main.announcemets_details.*
 import java.text.DecimalFormat
 
 class AnnouncementDetailActivity : AppCompatActivity(), AgentDetailsDialog.AgentDetailsListener {
@@ -13,6 +18,7 @@ class AnnouncementDetailActivity : AppCompatActivity(), AgentDetailsDialog.Agent
     private lateinit var fullName: String
     private lateinit var email: String
     private lateinit var phone: String
+    private lateinit var pictures : ArrayList<String>
     override fun getFullName(): String {
         return fullName
     }
@@ -28,6 +34,8 @@ class AnnouncementDetailActivity : AppCompatActivity(), AgentDetailsDialog.Agent
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.announcemets_details)
+
+
 
 
         setDetails()
@@ -51,7 +59,17 @@ class AnnouncementDetailActivity : AppCompatActivity(), AgentDetailsDialog.Agent
         val kitchens = intent.getIntExtra("kitchens",0)
         val pools = intent.getIntExtra("pools",0)
         val gardens = intent.getIntExtra("gardens",0)
-        val pictures = intent.getIntegerArrayListExtra("pictures")
+        pictures = intent.getStringArrayListExtra("pictures")
+
+        val carouselView = findViewById<CarouselView>(R.id.carouselView)
+
+        if (pictures.size == 0) carouselView.pageCount = 1
+        else carouselView.pageCount = pictures.size
+
+        val imageListener = CustomImageListener()
+        imageListener.setPictures(pictures)
+        carouselView.setImageListener(imageListener)
+
 
         val decimalFormatArea = DecimalFormat()
 
@@ -104,5 +122,20 @@ class AnnouncementDetailActivity : AppCompatActivity(), AgentDetailsDialog.Agent
     private fun showAgentDetails(){
         val dialog = AgentDetailsDialog()
         dialog.show(supportFragmentManager, "Agent Dialog")
+    }
+
+    class CustomImageListener() : ImageListener{
+
+        private lateinit var pictures : ArrayList<String>
+
+        fun setPictures(pictures : ArrayList<String>){
+            this.pictures = pictures
+        }
+
+        override fun setImageForPosition(position: Int, imageView: ImageView?) {
+            if(pictures.size == 0) imageView?.setImageResource(R.drawable.picture2)
+            else imageView?.setImageURI(Uri.parse(pictures[position]))
+        }
+
     }
 }

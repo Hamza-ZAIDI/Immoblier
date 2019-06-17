@@ -17,6 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".newAnnounce"/>
+        <activity android:name=".AnnouncementDetailActivity"/>
+
     </application>
 
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>

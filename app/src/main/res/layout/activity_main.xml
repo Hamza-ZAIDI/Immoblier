@@ -6,7 +6,18 @@
                                                  android:layout_height="match_parent"
                                                  tools:context=".MainActivity">
 
-    <android.support.design.widget.AppBarLayout
+<android.support.v7.widget.Toolbar android:layout_width="match_parent"
+                                       android:layout_height="wrap_content"
+                                       android:id="@+id/homeViewToolBar"
+                                       android:minHeight="?attr/actionBarSize"
+                                       android:title="@string/home_view_title"
+                                       android:background="@color/colorPrimary"
+                                       app:titleTextColor="@color/actionBarTextColor"
+
+    >
+    </android.support.v7.widget.Toolbar>    
+
+<android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 

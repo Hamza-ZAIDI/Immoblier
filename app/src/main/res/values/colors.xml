@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimary">#4CAF50</color>
+    <color name="colorPrimaryDark">#368839</color>
     <color name="colorAccent">#D81B60</color>
     <color name="priceTextColor">#F43636</color>
     <color name="availabulityColor">#4CAF50</color>
-    <color name="textColorPrimary">#000</color>
+    <color name="textColorPrimary">#000000</color>
     <color name="textColorSecondary">#4D000000</color>
-    <color name="priceBackGroundColor">#5C664D4D</color>
+    <color name="priceBackGroundColor">#CDF3EDED</color>
+    <color name="actionBarTextColor">#FFF</color>
+    <color name="background_color">#ECECEC</color>
+
+    <color name="dialog_background_color">#D8D7D7</color>
+    <color name="dialog_text_color">#030303</color>
+    <color name="dialog_btn_txt_color">#4CAF50</color>
+    <color name="dialog_btn_background_color">@color/dialog_background_color</color>
 </resources>

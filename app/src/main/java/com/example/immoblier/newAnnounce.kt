@@ -42,6 +42,7 @@ class newAnnounce : AppCompatActivity() {
             val price = findViewById<EditText>(R.id.price).text.toString()
             val type =
                 findViewById<RadioButton>(findViewById<RadioGroup>(R.id.type).checkedRadioButtonId).text.toString()
+            val nbGarages = findViewById<EditText>(R.id.garage).text.toString()
 
             if (!TextUtils.isEmpty(wilaya)
                 && !TextUtils.isEmpty(adrs)
@@ -53,7 +54,7 @@ class newAnnounce : AppCompatActivity() {
                 && !TextUtils.isEmpty(email)
             ) {
 
-                announcements.add(
+                SimulatedDataBase.addAnnounce(
                     Announcement(
                         wilaya,
                         adrs,
@@ -61,13 +62,13 @@ class newAnnounce : AppCompatActivity() {
                         type,
                         nbBedRooms.toInt(),
                         3,
-                        1,
+                        nbGarages.toInt(),
                         1,
                         0,
                         1,
                         area.toFloat(),
                         images,
-                        Agent(name, email, phone.toInt()),
+                        Agent(name, email, phone),
                         price.toFloat(),
                         Date()
                     )

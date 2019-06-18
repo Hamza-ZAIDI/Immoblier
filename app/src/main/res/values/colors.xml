@@ -8,11 +8,11 @@
     <color name="textColorPrimary">#000000</color>
     <color name="textColorSecondary">#4D000000</color>
     <color name="priceBackGroundColor">#CDF3EDED</color>
-    <color name="actionBarTextColor">#FFF</color>
+    <color name="actionBarTextColor">#FFFFFF</color>
     <color name="background_color">#ECECEC</color>
 
-    <color name="dialog_background_color">#D8D7D7</color>
     <color name="dialog_text_color">#030303</color>
     <color name="dialog_btn_txt_color">#4CAF50</color>
-    <color name="dialog_btn_background_color">@color/dialog_background_color</color>
+    <color name="dialog_btn_background_color">#ECECEC</color>
+    <color name="agent_detail_btn_color">#F46936</color>
 </resources>

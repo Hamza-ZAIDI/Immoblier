@@ -5,15 +5,18 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         tools:context=".newAnnounce"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+
+
+        >
 
     <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="120dp"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.0" android:id="@+id/scrollView3">
+            android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.0" android:id="@+id/scrollView3"
+            app:layout_constraintTop_toBottomOf="@+id/titre">
         <LinearLayout android:layout_width="match_parent"
                       android:layout_height="wrap_content"
                       android:orientation="vertical">
@@ -118,6 +121,19 @@
                     app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
                     app:layout_constraintStart_toStartOf="parent" android:hint="Nobmbre de chambres"
                     android:inputType="number"/>
+
+            <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/garage"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="50dp"
+                    app:layout_constraintTop_toBottomOf="@+id/name" android:layout_marginEnd="8dp"
+                    app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
+                    app:layout_constraintStart_toStartOf="parent" android:hint="Nombre de garage"/>
+
             <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -140,23 +156,31 @@
                     app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
                     app:layout_constraintStart_toStartOf="parent" android:hint="Prix"/>
 
-            <Button
-                    android:text="Upload Photos"
-                    android:layout_width="205dp"
-                    android:layout_height="50dp"
-                    android:id="@+id/upload"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginLeft="100dp"
-                    android:textAlignment="center"/>
-            <Button
-                    android:text="Submit"
-                    android:layout_width="205dp"
-                    android:layout_height="50dp"
-                    android:id="@+id/submit"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginLeft="100dp"
-                    android:layout_marginBottom="100dp"
-                    android:elevation="0dp" android:background="@color/colorPrimary" android:textAlignment="center"/>
+            <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <Button
+                        android:text="Upload Photos"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/upload"
+                        android:textAlignment="center"
+                        app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="24dp" android:layout_marginEnd="24dp" android:layout_marginTop="8dp"
+                        app:layout_constraintTop_toTopOf="parent"/>
+                <Button
+                        android:text="Submit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/submit"
+                        android:elevation="0dp" android:background="@color/colorPrimary" android:textAlignment="center"
+                        app:layout_constraintTop_toBottomOf="@id/upload"
+                        app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginEnd="24dp" app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="24dp" android:layout_marginTop="8dp"
+                        android:layout_marginBottom="88dp"/>
+            </android.support.constraint.ConstraintLayout>
 
 
         </LinearLayout>

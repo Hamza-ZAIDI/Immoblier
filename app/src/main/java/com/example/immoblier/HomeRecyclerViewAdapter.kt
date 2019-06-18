@@ -75,6 +75,7 @@ class HomeRecyclerViewAdapter(data : ArrayList<Announcement>,internal var contex
             intent.putExtra("gardens", data[position].nbGardens)
             intent.putExtra("pictures", data[position].pictures)
 
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
             context.startActivity(intent)
 

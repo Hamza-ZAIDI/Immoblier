@@ -13,20 +13,23 @@ import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import com.example.immoblier.SimulatedDataBase.announcements
 
 
 import java.util.*
 import kotlin.collections.ArrayList
 
-class MainActivity : AppCompatActivity(), SortDialog.SortDialogListener, FilterDialog.FilterDialogListener {
 
 
-    private lateinit var toolbar: Toolbar
-    private lateinit var announcementRecycler : RecyclerView
-    private lateinit var adapter: HomeRecyclerViewAdapter
 
-val announcements = ArrayList<Announcement>()
-class MainActivity : AppCompatActivity() {
+
+
+    class MainActivity : AppCompatActivity(), SortDialog.SortDialogListener, FilterDialog.FilterDialogListener {
+
+        private lateinit var toolbar: Toolbar
+        private lateinit var announcementRecycler : RecyclerView
+        private lateinit var adapter: HomeRecyclerViewAdapter
+
     @SuppressLint("ResourceAsColor")
     private fun createToolbar(){
 

@@ -1,5 +1,6 @@
 package com.example.immoblier
-
+import android.content.Intent
+import android.net.Uri
 import android.annotation.SuppressLint
 import android.location.Criteria
 import android.support.v7.app.AppCompatActivity
@@ -7,21 +8,27 @@ import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import kotlinx.android.synthetic.main.activity_main.*
 import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import com.example.immoblier.SimulatedDataBase.announcements
 
 
 import java.util.*
 import kotlin.collections.ArrayList
 
-class MainActivity : AppCompatActivity(), SortDialog.SortDialogListener, FilterDialog.FilterDialogListener {
 
 
-    private lateinit var toolbar: Toolbar
-    private lateinit var announcementRecycler : RecyclerView
-    private lateinit var adapter: HomeRecyclerViewAdapter
+
+
+
+    class MainActivity : AppCompatActivity(), SortDialog.SortDialogListener, FilterDialog.FilterDialogListener {
+
+        private lateinit var toolbar: Toolbar
+        private lateinit var announcementRecycler : RecyclerView
+        private lateinit var adapter: HomeRecyclerViewAdapter
 
     @SuppressLint("ResourceAsColor")
     private fun createToolbar(){
@@ -33,7 +40,6 @@ class MainActivity : AppCompatActivity(), SortDialog.SortDialogListener, FilterD
         toolbar.setTitleTextColor(R.color.actionBarTextColor)
 
     }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -42,6 +48,16 @@ class MainActivity : AppCompatActivity(), SortDialog.SortDialogListener, FilterD
         announcementRecycler = findViewById<RecyclerView>(R.id.rvAnnouncements)
         adapter = HomeRecyclerViewAdapter(DisplayedAnnouncements.getDisplayedAnnouncements(), applicationContext)
 
+      
+        fab.setOnClickListener { view ->
+            val intent = Intent(this, newAnnounce::class.java)
+            startActivity(intent)
+        }
+
+       
+
+        val announcementRecycler = findViewById<RecyclerView>(R.id.rvAnnouncements)
+        val adapter = HomeRecyclerViewAdapter(announcements, applicationContext)
 
         announcementRecycler.layoutManager = LinearLayoutManager(applicationContext)
         announcementRecycler.adapter = adapter

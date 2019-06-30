@@ -40,16 +40,18 @@ class HomeRecyclerViewAdapter(data : ArrayList<Announcement>,internal var contex
         val simpleDateFormat = SimpleDateFormat("dd-MM-yyyy")
 
         holder.date.text = simpleDateFormat.format(data[position].date)
+        holder.price.text = data[position].price.toString()
+        //holder.housePicture.setImageResource(data[position].pictures[0])
         val decimalFormat = DecimalFormat()
         decimalFormat.applyPattern("###.## DA")
 
         holder.price.text = decimalFormat.format(data[position].price)
-
         if(data[position].pictures.size == 0){
             holder.housePicture.setImageResource(R.drawable.picture2)
         } else {
             holder.housePicture.setImageURI(Uri.parse(data[position].pictures.get(0)))
         }
+
 
         holder.detail.setOnClickListener{
 
@@ -73,6 +75,7 @@ class HomeRecyclerViewAdapter(data : ArrayList<Announcement>,internal var contex
             intent.putExtra("gardens", data[position].nbGardens)
             intent.putExtra("pictures", data[position].pictures)
 
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
             context.startActivity(intent)
 

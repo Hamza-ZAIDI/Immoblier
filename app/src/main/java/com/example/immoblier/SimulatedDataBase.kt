@@ -11,13 +11,10 @@ object SimulatedDataBase {
         agents.add(Agent("ZAIDI Kamel Seif Elislam", "fk_zaidi@esi.dz", "0561725710"))
         agents.add(Agent("AMEDDAH Mohammed Acharaf","fm_ameddah@esi.dz","0657325308"))
 
-        val firstHomePictures = java.util.ArrayList<Int>()
-        val secondHomePictures = java.util.ArrayList<Int>()
-        val thirdHomePictures = java.util.ArrayList<Int>()
+        val firstHomePictures = java.util.ArrayList<String>()
+        val secondHomePictures = java.util.ArrayList<String>()
+        val thirdHomePictures = java.util.ArrayList<String>()
 
-        firstHomePictures.add(R.drawable.images)
-        secondHomePictures.add(R.drawable.picture3)
-        thirdHomePictures.add(R.drawable.picture2)
 
 
         announcements.add(
@@ -134,6 +131,10 @@ object SimulatedDataBase {
                 Date()
             )
         )
+    }
+
+    fun addAnnounce( announcement: Announcement){
+        this.announcements.add(announcement)
     }
 
 
